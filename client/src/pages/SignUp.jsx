@@ -8,6 +8,11 @@ function SignUp() {
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
 
+  const location = {
+    pathname: '/sign-in',
+    state: { fromDashboard: true }
+  }
+
   const handleChange = (e) => {
     setFormData({
       ...formData, 
@@ -60,7 +65,7 @@ function SignUp() {
       </form>
       <div className='flex gap-2 mt-5'>
         <p>Have an account?</p>
-        <Link to={"sign-in"}> 
+        <Link to={location} > 
             <span className='text-blue-700'>Sign in</span>
         </Link>
       </div>
